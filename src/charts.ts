@@ -30,16 +30,33 @@ export type ChartSession = {
   chart: echarts.ECharts,
 }
 
+function resize(session: ChartSession, dimentions: { height: number, width: number }) {
+  const width = dimentions.width ;
+  const height = dimentions.height - dimentions.height * .2;
+  session.chart.resize({
+    width,
+    height,
+      animation: {
+        delay: 0.4,
+      }
+    })
+}
+
 export function createChartSession(element: HTMLCanvasElement) {
   const chart = echarts.init(element)
   const session = {
     chart,
   }
+  window.addEventListener('resize', (ev: UIEvent) => {
+    const target = ev.target as Window;
+    const { innerHeight: height, innerWidth: width } = target;
+    resize(session, {height, width})
+  });
+
+  resize(session, { height: window.innerHeight, width: window.innerWidth });
   return session;
 }
 
-export const dispose = (session: ChartSession) => session.chart.dispose();
-export const resize = (session: ChartSession) => session.chart.resize();
 export function render(session: ChartSession, title: string, dataSets: Array<DataSet>) {
   const option: EChartsOption = {
     title: {

@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SEC Timeseries Viewer</title>
   <link rel="icon" href="/assets/favicon.ico" />
+  <script type="module" crossorigin src="/assets/index-Cu-xDUm0.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B4EQZfN9.css">
 </head>
 <body>
   <header>
     <h1>SEC Timeseries Viewer</h1>
   </header>
   <main>
-    <h3>
-      <label for="dataSets">Select metric:</label>
-    </h3>
+    <label for="dataSets">Select metric:</label>
     <select id="dataSets">
       <option value="etp_cancel_to_trade">ETP Cancel to Trade</option>
       <option value="etp_hidden_rate">ETP Hidden Rate</option>
@@ -30,9 +30,5 @@
     </select>
     <canvas id="graph" width="1600" height="800"></canvas>
   </main>
-  <footer>
-    <p>&copy; 2025 Byron Wheeler</p>
-  </footer>
-  <script type="module" src="/src/main.ts"></script>
 </body>
 </html>
