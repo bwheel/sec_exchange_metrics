@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build --base=/sec_exchange_metrics/",
     "preview": "vite preview",
-    "clean": "rm -fr docs"
+    "clean": "rm -fr dist"
   },
   "devDependencies": {
     "typescript": "~5.8.3",
