@@ -32,7 +32,7 @@ export type ChartSession = {
 
 function resize(session: ChartSession, dimentions: { height: number, width: number }) {
   const width = dimentions.width ;
-  const height = dimentions.height - dimentions.height * .2;
+  const height = dimentions.height - dimentions.height * .25;
   session.chart.resize({
     width,
     height,

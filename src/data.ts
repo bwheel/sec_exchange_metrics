@@ -1,4 +1,3 @@
-import * as Utils from './utils';
 export type DataRecord = { date: Date, value: number };
 
 export type DataSet = {
@@ -22,10 +21,7 @@ export async function createDataSets(dataSetType: DataSetType): Promise<Array<Da
   return dataSets;
 }
 
-const dataSetFilePath = (type: DataSetType) =>
-  Utils.IsProduction() ?
-    `${window.location.href}data/${type}.csv`
-    :`/data/${type}.csv`;
+const dataSetFilePath = (type: DataSetType) => `${window.location.href}data/${type}.csv`
 
 
 
